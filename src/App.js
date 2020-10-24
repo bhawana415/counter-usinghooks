@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';  
 
-function App() {
+//we are increment the count it is not increase 
+//in functional compoenent thats why we used class compoenent or hooks 
+/*let count=1;
+const IncNum=()=>{
+
+  count++;
+}*/
+
+
+const App=()=> {
+  const state =useState();
+  const[count,setCount]=useState(0);
+  const IncNum=()=>{
+    setCount(count+1);
+  };
+  const DreNum=()=>{
+    setCount(count-1);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ <>
+ <h1>{count}</h1>
+ <button onClick={IncNum}>Increment</button>
+ <button onClick={DreNum}>Decrement</button>
+ </>
   );
 }
 
